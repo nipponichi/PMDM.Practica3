@@ -10,14 +10,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.pmdm.practica3.contants.Constants;
 import com.pmdm.practica3.controller.MedicionController;
 import com.pmdm.practica3.model.ClienteModel;
 
-
-
 public class MedicionViewModel extends ViewModel {
 
-    private final String POST_URL = "http://192.168.2.136/webservice/app/temp.php";
+    private String postURL = Constants.TEMP_PHP;
     private MedicionController medicionController = new MedicionController();
     private ClienteModel clienteModel = new ClienteModel();
     private Context context;
@@ -39,7 +38,7 @@ public class MedicionViewModel extends ViewModel {
         this.clienteModel = clienteModel;
 
         // Tomamos los datos del cliente
-        StringRequest stringRequest = medicionController.tempRequest(POST_URL, clienteModel.getNombre(),
+        StringRequest stringRequest = medicionController.tempRequest(postURL, clienteModel.getNombre(),
                 clienteModel.getApellidos(), clienteModel.getTemperatura(), clienteModel.getFormat(),
                 clienteModel.getCiudad(), clienteModel.getProvincia(), responseListener, errorListener);
         RequestQueue queue = Volley.newRequestQueue(context);

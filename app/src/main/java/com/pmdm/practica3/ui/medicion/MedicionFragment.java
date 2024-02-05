@@ -12,7 +12,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -35,8 +34,6 @@ public class MedicionFragment extends Fragment {
     private String nombre, apellidos, temperatura, poblacion, provincia;
 
     private boolean celsius, fahrenheit;
-
-    private Bundle bundle;
 
     private MedicionViewModel medicionViewModel;
 

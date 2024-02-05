@@ -1,48 +1,37 @@
 package com.pmdm.practica3.viewmodel.login;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.pmdm.practica3.databinding.ViewLoginBinding;
 import com.pmdm.practica3.model.UsuarioModel;
+import com.pmdm.practica3.sharedPreferences.SharedConstants;
 
 
 public class LoginActivity extends AppCompatActivity {
     private ViewLoginBinding binding;
     private UsuarioModel usuarioModel;
     private SharedPreferences sharedPreferences;
-    private static final String PREF_NAME = "login_prefs";
-    private static final String KEY_USER = "user";
-    private static final String KEY_PASSWD = "passwd";
-    private static final String KEY_REMEMBER = "remember";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //EdgeToEdge.enable(this);
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         binding = ViewLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(SharedConstants.PREF_NAME, Context.MODE_PRIVATE);
 
-        // Verifica el estado de cbRemember y carga datos guardados si es necesario
-        boolean rememberChecked = sharedPreferences.getBoolean(KEY_REMEMBER, false);
+        // Verifica el estado de cbRecordar y carga datos guardados si es necesario
+        boolean rememberChecked = sharedPreferences.getBoolean(SharedConstants.KEY_REMEMBER, false);
         binding.cbRecordar.setChecked(rememberChecked);
         if (rememberChecked) {
-            String savedUser = sharedPreferences.getString(KEY_USER, "");
-            String savedPasswd = sharedPreferences.getString(KEY_PASSWD, "");
+            String savedUser = sharedPreferences.getString(SharedConstants.KEY_USER, "");
+            String savedPasswd = sharedPreferences.getString(SharedConstants.KEY_PASSWD, "");
             binding.tiUser.setText(savedUser);
             binding.tiPassword.setText(savedPasswd);
         }
@@ -59,16 +48,16 @@ public class LoginActivity extends AppCompatActivity {
                 // Guarda datos en sharedpreferences si cbRemember está marcado
                 if (binding.cbRecordar.isChecked()) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(KEY_USER, textUser);
-                    editor.putString(KEY_PASSWD, textPasswd);
-                    editor.putBoolean(KEY_REMEMBER, true);
+                    editor.putString(SharedConstants.KEY_USER, textUser);
+                    editor.putString(SharedConstants.KEY_PASSWD, textPasswd);
+                    editor.putBoolean(SharedConstants.KEY_REMEMBER, true);
                     editor.apply();
                 } else {
                     // Limpia datos en sharedpreferences si el checkbox no está marcado
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.remove(KEY_USER);
-                    editor.remove(KEY_PASSWD);
-                    editor.remove(KEY_REMEMBER);
+                    editor.remove(SharedConstants.KEY_USER);
+                    editor.remove(SharedConstants.KEY_PASSWD);
+                    editor.remove(SharedConstants.KEY_REMEMBER);
                     editor.apply();
                 }
                 // Inicia el login de usuario

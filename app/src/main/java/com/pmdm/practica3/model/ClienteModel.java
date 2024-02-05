@@ -2,38 +2,14 @@ package com.pmdm.practica3.model;
 
 public class ClienteModel {
     private String id;
-    private String nombre;
-    private String apellidos;
-    private int temperatura;
-    private int format;
-    private String ciudad;
-    private String provincia;
+    private String nombre, apellidos, ciudad, provincia;
+    private int temperatura, format;
 
     /**
      * Constructor por defecto
      */
-    public ClienteModel () {
+    public ClienteModel() {
 
-    }
-
-    /**
-     * Contructor de Cliente
-     * @param id
-     * @param nombre
-     * @param apellidos
-     * @param temperatura
-     * @param format
-     * @param ciudad
-     * @param provincia
-     */
-    public ClienteModel(String id, String nombre, String apellidos, int temperatura, int format, String ciudad, String provincia) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.temperatura = temperatura;
-        this.format = format;
-        this.ciudad = ciudad;
-        this.provincia = provincia;
     }
 
     public String getId() {
@@ -94,10 +70,11 @@ public class ClienteModel {
 
     /**
      * Selector de formato de grados
+     *
      * @param celsius
      * @return
      */
-    public int formatChooser (boolean celsius) {
+    public int formatChooser(boolean celsius) {
         if (celsius) {
             return 1;
         } else {

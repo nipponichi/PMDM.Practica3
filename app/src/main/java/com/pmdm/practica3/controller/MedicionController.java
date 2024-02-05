@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-import com.pmdm.practica3.model.ClienteModel;
+
 import com.pmdm.practica3.viewmodel.resumen.ResumenActivity;
 
 import org.json.JSONException;
@@ -43,6 +43,7 @@ public class MedicionController {
 
     /**
      * Controla la respuesta del WebService
+     *
      * @param response
      * @param context
      */
@@ -54,7 +55,7 @@ public class MedicionController {
             int id = jsonResponse.getInt("temp");
             if (success) {
                 Intent intent = new Intent(context, ResumenActivity.class);
-                intent.putExtra("id",id);
+                intent.putExtra("id", id);
                 context.startActivity(intent);
             } else {
                 String error = jsonResponse.getString("error");

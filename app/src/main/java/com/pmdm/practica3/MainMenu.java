@@ -59,7 +59,7 @@ public class MainMenu extends AppCompatActivity {
         // Establece el orden del menú
         DrawerLayout drawer = binding.drawerLayout;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_medicion, R.id.nav_conversor, R.id.nav_configuracion, R.id.nav_cerrar)
+                R.id.nav_inicio, R.id.nav_medicion, R.id.nav_conversor, R.id.nav_configuracion, R.id.nav_localizacion, R.id.nav_cerrar)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);

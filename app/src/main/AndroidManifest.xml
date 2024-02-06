@@ -33,14 +33,6 @@
                     android:theme="@style/Theme.Practica3.NoActionBar"/>
             </intent-filter>
         </activity>
-<<<<<<< Updated upstream
-=======
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
-
->>>>>>> Stashed changes
     </application>
 
 </manifest>

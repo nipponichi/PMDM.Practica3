@@ -11,11 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-<<<<<<< Updated upstream
 import com.pmdm.practica3.contants.Constants;
-=======
-import com.pmdm.practica3.constants.Constants;
->>>>>>> Stashed changes
 import com.pmdm.practica3.controller.LoginController;
 import com.pmdm.practica3.model.UsuarioModel;
 

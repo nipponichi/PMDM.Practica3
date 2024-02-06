@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.pmdm.practica3.R;
 import com.pmdm.practica3.databinding.ViewLoginBinding;
 import com.pmdm.practica3.model.UsuarioModel;
 import com.pmdm.practica3.sharedPreferences.SharedConstants;

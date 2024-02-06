@@ -14,10 +14,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pmdm.practica3.R;
-<<<<<<< Updated upstream
-=======
-import com.pmdm.practica3.ui.localizacion.LocalizacionActivity;
->>>>>>> Stashed changes
 import com.pmdm.practica3.viewmodel.resumen.ResumenActivity;
 
 import java.util.ArrayList;
@@ -124,18 +120,12 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ViewHold
             temperatura.setText(String.valueOf(temp));
             poblacion.setText(clienteModel.getCiudad());
 
-            // Establece una función de click para ir a vista localización con el cliente seleccionado
+            // Establece una función de click para ir a vista resumen con el cliente seleccionado
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-<<<<<<< Updated upstream
                     Intent intent = new Intent(context, ResumenActivity.class);
                     intent.putExtra("id", Integer.valueOf(clienteModel.getId()));
-=======
-                    Intent intent = new Intent(context, LocalizacionActivity.class);
-                    intent.putExtra("ciudad", clienteModel.getCiudad());
-                    intent.putExtra("nombre", clienteModel.getNombre() + " " + clienteModel.getApellidos());
->>>>>>> Stashed changes
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     context.startActivity(intent);
                 }
